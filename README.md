@@ -1,6 +1,6 @@
 # Dual Clock Asynchronous FIFO — UVM Verification
 
-> **FFVDD Elective Mini Project** · UVM 1.2 Functional Verification of a Dual-Clock Asynchronous FIFO in SystemVerilog
+> · UVM 1.2 Functional Verification of a Dual-Clock Asynchronous FIFO in SystemVerilog
 
 ![Language](https://img.shields.io/badge/Language-SystemVerilog%20%7C%20Verilog-blue)
 ![Methodology](https://img.shields.io/badge/Methodology-UVM%201.2-green)
@@ -157,4 +157,4 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 ---
 
-
+Done as part of FFVDD (Formal and Functional Verification of Digital Designs) Elective Mini Project Assignment.

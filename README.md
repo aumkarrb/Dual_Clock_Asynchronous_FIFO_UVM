@@ -157,6 +157,4 @@ This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) 
 
 ---
 
-## Topics
 
-`verification` · `functional-verification` · `formal-verification` · `uvm` · `systemverilog` · `asynchronous-fifo` · `clock-domain-crossing` · `gray-code` · `cdc`

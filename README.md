@@ -6,9 +6,7 @@ This project implements and verifies a **Dual Clock Asynchronous FIFO** using th
 
 ---
 
-## 2. Design Architecture
-
-## 3 Module Summary
+## 2. Module Summary
 
 | Module Name | File | Description |
 |---|---|---|
@@ -19,7 +17,7 @@ This project implements and verifies a **Dual Clock Asynchronous FIFO** using th
 | `sync_w2r` | `sync_w2r.v` | **Write-to-read pointer synchronizer.** A 2-stage flip-flop synchronizer (double-flop) clocked by `rclk`. Safely transfers the Gray-coded write pointer (`wptr`) from the `wclk` domain into the `rclk` domain (`rq2_wptr`), mitigating metastability at the clock domain crossing boundary. |
 | `sync_r2w` | `sync_r2w.v` | **Read-to-write pointer synchronizer.** A 2-stage flip-flop synchronizer (double-flop) clocked by `wclk`. Safely transfers the Gray-coded read pointer (`rptr`) from the `rclk` domain into the `wclk` domain (`wq2_rptr`), mitigating metastability at the clock domain crossing boundary. |
 
-### 3.1 Top-Level Interface Signals
+## 3. Top-Level Interface Signals
 
 | Signal | Direction | Clock Domain | Description |
 |---|---|---|---|
@@ -91,12 +89,7 @@ Dual_Clock_Asynchronous_FIFO_UVM/
 │   ├── fifo_env.sv              # UVM environment (top-level TB container)
 │   ├── fifo_test.sv             # UVM test class(es)
 │   └── fifo_tb_top.sv           # Top-level simulation module (DUT + TB bind)
-│
-├── Output/                      # Simulation output artifacts
-│   ├── *.log                    # Simulator log files
-│   ├── *.vcd / *.fsdb           # Waveform dump files (GTKWave / Verdi)
-│   └── coverage_report/         # Functional and code coverage reports
-│
+|
 ├── References/                  # Supporting documentation
 │   ├── Cummings_SNUG2002.pdf    # Clifford Cummings async FIFO paper
 │   │

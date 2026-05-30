@@ -35,19 +35,6 @@ Dual_Clock_Asynchronous_FIFO_UVM/
 └── README.md                                 # This file
 ```
 
-### File Summary
-
-| File | Location | Type | Description |
-|------|----------|------|-------------|
-| `dual_clock_async_fifo_design.v` | `Design/` | Verilog RTL | Top-level FIFO (`fifo1`) and all five sub-modules: `fifomem`, `rptr_empty`, `wptr_full`, `sync_r2w`, `sync_w2r` |
-| `dual_clock_async_fifo_testbench...` | `Testbench/` | SystemVerilog (UVM) | Complete UVM 1.2 environment: interface, config objects, transactions, sequences, agents, scoreboard, coverage, and testbench top |
-| `Output.txt` | `Output/` | Text | Full simulation transcript including UVM phase log, scoreboard results, and pass/fail status |
-| `Waveform.png` | `Output/` | Image | Waveform screenshot showing write/read clock domains, pointer synchronization, `wfull`, and `rempty` signals |
-| `cummings1_final.pdf` | `References/` | PDF | Clifford Cummings, *Simulation and Synthesis Techniques for Asynchronous FIFO Design* (SNUG 2002) — primary design reference |
-| `Simulation_and_Synthesis_Tech...` | `References/` | Document | Supporting simulation and synthesis reference material |
-| `Template_FFVDD_Team_1.pptx` | `References/` | PowerPoint | Project presentation template (FFVDD course) |
-| `LICENSE` | Root | Text | MIT License |
-
 ---
 
 ## Design Architecture

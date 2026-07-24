@@ -143,5 +143,3 @@ The scoreboard maintains a shadow FIFO (`expected_data[$]`) in the write clock d
 This project is licensed under the **MIT License** — see [`LICENSE`](LICENSE) for details.
 
 ---
-
-Done as part of FFVDD (Formal and Functional Verification of Digital Designs) Elective Mini Project Assignment.

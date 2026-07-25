@@ -27,7 +27,6 @@ Dual_Clock_Asynchronous_FIFO_UVM/
 │   └── Waveform.png                          # GTKWave / simulator waveform screenshot
 ├── References/
 │   ├── Simulation_and_Synthesis_Tech...      # Reference textbook/paper excerpt
-│   ├── Template_FFVDD_Team_1.pptx            # Project presentation slides
 │   └── cummings1_final.pdf                   # Clifford Cummings FIFO paper (SNUG 2002)
 ├── Testbench/
 │   └── dual_clock_async_fifo_testbench...    # Full UVM testbench (SystemVerilog)

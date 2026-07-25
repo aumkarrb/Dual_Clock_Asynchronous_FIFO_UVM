@@ -133,7 +133,6 @@ The scoreboard maintains a shadow FIFO (`expected_data[$]`) in the write clock d
 |-----------|-------------|
 | `cummings1_final.pdf` | C. Cummings, *Simulation and Synthesis Techniques for Asynchronous FIFO Design*, SNUG San Jose 2002 — the canonical reference for Gray-code CDC FIFO architecture |
 | `Simulation_and_Synthesis_Tech...` | Supporting simulation and synthesis methodology document |
-| `Template_FFVDD_Team_1.pptx` | Course presentation slides for the FFVDD Elective Mini Project |
 
 ---
 

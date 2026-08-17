@@ -97,39 +97,6 @@ fifo_uvm_base_test
 | Cross-domain analyzer | `cross_domain_analyzer` | Merges write- and read-monitor transactions into `fifo_combined_transaction` events for coverage sampling |
 | Config objects | `write_agent_config`, `read_agent_config`, `fifo_uvm_env_config` | Distributed via `uvm_config_db` |
  
-### Randomization Constraints
- 
-| Field | Distribution |
-|-------|-------------|
-| `wdata` (random loop) | `0x00` → 10%, `0xFF` → 10%, `0x01`–`0xFE` → 80% |
-| `winc` | Assert → 70%, De-assert → 30% |
-| `rinc` | Assert → 70%, De-assert → 30% |
- 
-`fifo_write_sequence` also issues two **directed** transactions (`wdata == 8'h00`, `wdata == 8'hFF`, `winc == 1`) ahead of the randomized loop, so the `wdata_cp` boundary bins are hit on every run regardless of random seed — closing what was previously a seed-dependent coverage hole.
- 
----
- 
-## Scoreboard Operation
- 
-1. **Write monitor** pushes `wdata` into `expected_data` when `winc && !wfull`.
-2. **Read monitor** pops the front of `expected_data` and compares it to `rdata` when `rinc && !rempty`.
-3. Any mismatch raises `UVM_ERROR`; a clean run prints `*** TEST PASSED ***`.
-Note: the scoreboard has no `check_phase`, so items left in `expected_data` at end-of-test (writes issued but never read back) do not fail the run — only actual value mismatches do.
- 
----
- 
-## Test Scenarios
- 
-| Test | Class | Description |
-|------|-------|-------------|
-| Normal Operation | `fifo_normal_test` | Concurrent write/read sequences via `fork…join`; `num_transactions = 32` per side; 100 MHz write / 75 MHz read clocks |
-| Base (template) | `fifo_uvm_base_test` | 1 µs idle run; base class for derived tests |
- 
-A `#10us` watchdog (`uvm_fatal("TIMEOUT", ...)`) in the tb top module aborts the simulation if it hangs.
- 
----
- 
-
  
 | Metric | Result |
 |--------|--------|

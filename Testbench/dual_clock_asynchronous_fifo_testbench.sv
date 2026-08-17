@@ -169,7 +169,7 @@ class fifo_combined_transaction extends uvm_sequence_item;
 endclass
 
 // ============================================================================
-// Sequences (Defined early to avoid forward reference issues)
+// Sequences 
 // ============================================================================
 class fifo_write_sequence extends uvm_sequence#(fifo_write_transaction);
   `uvm_object_utils(fifo_write_sequence)
@@ -182,6 +182,18 @@ class fifo_write_sequence extends uvm_sequence#(fifo_write_transaction);
   
   virtual task body();
     fifo_write_transaction tx;
+    tx = fifo_write_transaction::type_id::create("tx");
+    start_item(tx);
+    assert(tx.randomize() with { wdata == 8'h00; winc == 1; });
+    finish_item(tx);
+    #10ns;
+
+    tx = fifo_write_transaction::type_id::create("tx");
+    start_item(tx);
+    assert(tx.randomize() with { wdata == 8'hFF; winc == 1; });
+    finish_item(tx);
+    #10ns;
+
     repeat (num_transactions) begin
       tx = fifo_write_transaction::type_id::create("tx");
       start_item(tx);
@@ -581,7 +593,7 @@ class fifo_scoreboard extends uvm_scoreboard;
 endclass
 
 // ============================================================================
-// Coverage - Simplified
+// Coverage 
 // ============================================================================
 class fifo_coverage extends uvm_subscriber#(fifo_combined_transaction);
   `uvm_component_utils(fifo_coverage)

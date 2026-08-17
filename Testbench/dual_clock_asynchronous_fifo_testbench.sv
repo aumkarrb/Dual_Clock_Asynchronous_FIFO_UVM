@@ -169,7 +169,7 @@ class fifo_combined_transaction extends uvm_sequence_item;
 endclass
 
 // ============================================================================
-// Sequences (Defined early to avoid forward reference issues)
+// Sequences 
 // ============================================================================
 class fifo_write_sequence extends uvm_sequence#(fifo_write_transaction);
   `uvm_object_utils(fifo_write_sequence)
@@ -182,12 +182,6 @@ class fifo_write_sequence extends uvm_sequence#(fifo_write_transaction);
   
   virtual task body();
     fifo_write_transaction tx;
-
-    // Directed boundary writes: guarantee wdata_cp zero/max_val bins are hit
-    // on every run instead of relying on 10% dist weight over random draws
-    // (root cause of 77.78% coverage: 32-sample random run can legally miss
-    // 0x00 and/or 0xFF entirely -- P(miss both) ~ (0.9^32)^2 ~= 0.1%, and it
-    // did on the seed used to log 77.78%/77.38%).
     tx = fifo_write_transaction::type_id::create("tx");
     start_item(tx);
     assert(tx.randomize() with { wdata == 8'h00; winc == 1; });
@@ -599,7 +593,7 @@ class fifo_scoreboard extends uvm_scoreboard;
 endclass
 
 // ============================================================================
-// Coverage - Simplified
+// Coverage 
 // ============================================================================
 class fifo_coverage extends uvm_subscriber#(fifo_combined_transaction);
   `uvm_component_utils(fifo_coverage)

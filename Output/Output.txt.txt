@@ -1,0 +1,204 @@
+[2026-08-17 15:58:16 UTC] xrun -Q -unbuffered '-timescale' '1ns/1ns' '-sysv' '-coverage' 'functional' '-covoverwrite' '-access' '+rw' '+UVM_VERBOSITY=UVM_HIGH' -uvmnocdnsextra -uvmhome $UVM_HOME $UVM_HOME/src/uvm_macros.svh design.sv testbench.sv  
+TOOL:	xrun	25.03-s001: Started on Aug 17, 2026 at 11:58:17 EDT
+xrun: 25.03-s001: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+	Top level design units:
+		uvm_pkg
+		$unit_0x67f934e9
+		fifo_uvm_tb_top
+xmelab: *W,CGPIDF: Covergroup "per_instance" option , by default, is set as 0.
+xmelab: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+Loading snapshot worklib.fifo_uvm_tb_top:sv .................... Done
+SVSEED default: 1
+xcelium> source /xcelium25.03/tools/xcelium/files/xmsimrc
+xcelium> source /xcelium25.03/tools//methodology/UVM/CDNS-1.2/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(412) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+CDNS-UVM-1.2 (25.03-s001)
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test fifo_normal_test...
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh(605) @ 0: reporter [UVMTOP] UVM testbench topology:
+------------------------------------------------------------------
+Name                       Type                        Size  Value
+------------------------------------------------------------------
+uvm_test_top               fifo_normal_test            -     @1635
+  env                      fifo_uvm_env                -     @1704
+    coverage               fifo_coverage               -     @1864
+      analysis_imp         uvm_analysis_imp            -     @1914
+    cross_analyzer         cross_domain_analyzer       -     @1952
+      ap                   uvm_analysis_port           -     @2104
+      r_ap                 uvm_analysis_export         -     @2054
+      r_fifo               uvm_tlm_analysis_fifo #(T)  -     @2418
+        analysis_export    uvm_analysis_imp            -     @2663
+        get_ap             uvm_analysis_port           -     @2613
+        get_peek_export    uvm_get_peek_imp            -     @2515
+        put_ap             uvm_analysis_port           -     @2564
+        put_export         uvm_put_imp                 -     @2466
+      w_ap                 uvm_analysis_export         -     @2004
+      w_fifo               uvm_tlm_analysis_fifo #(T)  -     @2136
+        analysis_export    uvm_analysis_imp            -     @2386
+        get_ap             uvm_analysis_port           -     @2335
+        get_peek_export    uvm_get_peek_imp            -     @2235
+        put_ap             uvm_analysis_port           -     @2285
+        put_export         uvm_put_imp                 -     @2185
+    r_agent                read_agent                  -     @1779
+      driver               read_driver                 -     @3358
+        rsp_port           uvm_analysis_port           -     @3458
+        seq_item_port      uvm_seq_item_pull_port      -     @3408
+      monitor              read_monitor                -     @3489
+        read_ap            uvm_analysis_port           -     @3542
+      sequencer            read_sequencer              -     @2712
+        rsp_export         uvm_analysis_export         -     @2772
+        seq_item_export    uvm_seq_item_pull_imp       -     @3327
+        arbitration_queue  array                       0     -    
+        lock_queue         array                       0     -    
+        num_last_reqs      integral                    32    'd1  
+        num_last_rsps      integral                    32    'd1  
+    scoreboard             fifo_scoreboard             -     @1826
+      r_fifo               uvm_tlm_analysis_fifo #(T)  -     @3970
+        analysis_export    uvm_analysis_imp            -     @4214
+        get_ap             uvm_analysis_port           -     @4164
+        get_peek_export    uvm_get_peek_imp            -     @4066
+        put_ap             uvm_analysis_port           -     @4115
+        put_export         uvm_put_imp                 -     @4017
+      read_ap              uvm_analysis_export         -     @3662
+      w_fifo               uvm_tlm_analysis_fifo #(T)  -     @3694
+        analysis_export    uvm_analysis_imp            -     @3938
+        get_ap             uvm_analysis_port           -     @3888
+        get_peek_export    uvm_get_peek_imp            -     @3790
+        put_ap             uvm_analysis_port           -     @3839
+        put_export         uvm_put_imp                 -     @3741
+      write_ap             uvm_analysis_export         -     @3613
+    w_agent                write_agent                 -     @1746
+      driver               write_driver                -     @4902
+        rsp_port           uvm_analysis_port           -     @4998
+        seq_item_port      uvm_seq_item_pull_port      -     @4949
+      monitor              write_monitor               -     @5030
+        write_ap           uvm_analysis_port           -     @5080
+      sequencer            write_sequencer             -     @4260
+        rsp_export         uvm_analysis_export         -     @4318
+        seq_item_export    uvm_seq_item_pull_imp       -     @4870
+        arbitration_queue  array                       0     -    
+        lock_queue         array                       0     -    
+        num_last_reqs      integral                    32    'd1  
+        num_last_rsps      integral                    32    'd1  
+------------------------------------------------------------------
+
+UVM_INFO testbench.sv(841) @ 0: uvm_test_top [NORMAL_TEST] Starting normal operation test
+UVM_INFO testbench.sv(559) @ 35: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x00, Queue size: 1
+UVM_INFO testbench.sv(559) @ 45: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x00, Queue size: 2
+UVM_INFO testbench.sv(559) @ 55: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xff, Queue size: 3
+UVM_INFO testbench.sv(559) @ 65: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xff, Queue size: 4
+UVM_INFO testbench.sv(559) @ 75: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xde, Queue size: 5
+UVM_INFO testbench.sv(559) @ 85: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xde, Queue size: 6
+UVM_INFO testbench.sv(579) @ 91: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x00 matches
+UVM_INFO testbench.sv(559) @ 95: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xcb, Queue size: 6
+UVM_INFO testbench.sv(559) @ 105: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xcb, Queue size: 7
+UVM_INFO testbench.sv(559) @ 115: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x85, Queue size: 8
+UVM_INFO testbench.sv(559) @ 125: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x85, Queue size: 9
+UVM_INFO testbench.sv(579) @ 133: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x00 matches
+UVM_INFO testbench.sv(559) @ 135: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x93, Queue size: 9
+UVM_INFO testbench.sv(559) @ 145: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x93, Queue size: 10
+UVM_INFO testbench.sv(579) @ 147: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0xff matches
+UVM_INFO testbench.sv(559) @ 155: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x6e, Queue size: 10
+UVM_INFO testbench.sv(579) @ 161: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0xff matches
+UVM_INFO testbench.sv(559) @ 165: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x6e, Queue size: 10
+UVM_INFO testbench.sv(579) @ 175: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0xde matches
+UVM_INFO testbench.sv(559) @ 175: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x15, Queue size: 10
+UVM_INFO testbench.sv(559) @ 185: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x15, Queue size: 11
+UVM_INFO testbench.sv(579) @ 189: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0xde matches
+UVM_INFO testbench.sv(559) @ 195: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xb6, Queue size: 11
+UVM_INFO testbench.sv(579) @ 203: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0xcb matches
+UVM_INFO testbench.sv(559) @ 205: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xb6, Queue size: 11
+UVM_INFO testbench.sv(559) @ 235: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x3f, Queue size: 12
+UVM_INFO testbench.sv(559) @ 245: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x3f, Queue size: 13
+UVM_INFO testbench.sv(559) @ 255: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xcd, Queue size: 14
+UVM_INFO testbench.sv(579) @ 259: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0xcb matches
+UVM_INFO testbench.sv(559) @ 265: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xcd, Queue size: 14
+UVM_INFO testbench.sv(579) @ 273: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x85 matches
+UVM_INFO testbench.sv(559) @ 275: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x83, Queue size: 14
+UVM_INFO testbench.sv(579) @ 287: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x85 matches
+UVM_INFO testbench.sv(579) @ 301: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x93 matches
+UVM_INFO testbench.sv(559) @ 315: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xad, Queue size: 13
+UVM_INFO testbench.sv(559) @ 325: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xad, Queue size: 14
+UVM_INFO testbench.sv(579) @ 329: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x93 matches
+UVM_INFO testbench.sv(559) @ 335: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xf5, Queue size: 14
+UVM_INFO testbench.sv(559) @ 345: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xf5, Queue size: 15
+UVM_INFO testbench.sv(559) @ 365: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x91, Queue size: 16
+UVM_INFO testbench.sv(579) @ 371: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x6e matches
+UVM_INFO testbench.sv(579) @ 385: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x6e matches
+UVM_INFO testbench.sv(579) @ 399: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x15 matches
+UVM_INFO testbench.sv(559) @ 405: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x5c, Queue size: 14
+UVM_INFO testbench.sv(559) @ 425: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0xb8, Queue size: 15
+UVM_INFO testbench.sv(579) @ 427: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0x15 matches
+UVM_INFO testbench.sv(579) @ 441: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0xb6 matches
+UVM_INFO testbench.sv(559) @ 495: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x18, Queue size: 14
+UVM_INFO testbench.sv(579) @ 497: uvm_test_top.env.scoreboard [SCOREBOARD] Read: 0xb6 matches
+UVM_INFO testbench.sv(559) @ 505: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x18, Queue size: 14
+UVM_INFO testbench.sv(559) @ 555: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x8f, Queue size: 15
+UVM_INFO testbench.sv(559) @ 565: uvm_test_top.env.scoreboard [SCOREBOARD] Write: 0x8f, Queue size: 16
+UVM_INFO testbench.sv(857) @ 1195: uvm_test_top [NORMAL_TEST] Normal test completed
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_objection.svh(1271) @ 1195: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO testbench.sv(647) @ 1195: uvm_test_top.env.coverage [COVERAGE] Overall coverage: 100.00%
+UVM_INFO testbench.sv(588) @ 1195: uvm_test_top.env.scoreboard [SCOREBOARD_REPORT] === FIFO Scoreboard Results ===
+UVM_INFO testbench.sv(589) @ 1195: uvm_test_top.env.scoreboard [SCOREBOARD_REPORT] Total writes: 34
+UVM_INFO testbench.sv(590) @ 1195: uvm_test_top.env.scoreboard [SCOREBOARD_REPORT] Total reads: 18
+UVM_INFO testbench.sv(591) @ 1195: uvm_test_top.env.scoreboard [SCOREBOARD_REPORT] Data mismatches: 0
+UVM_INFO testbench.sv(594) @ 1195: uvm_test_top.env.scoreboard [SCOREBOARD_REPORT] *** TEST PASSED ***
+UVM_INFO /xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_report_server.svh(851) @ 1195: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   64
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[COVERAGE]     1
+[NORMAL_TEST]     2
+[RNTST]     1
+[SCOREBOARD]    52
+[SCOREBOARD_REPORT]     5
+[TEST_DONE]     1
+[UVM/RELNOTES]     1
+[UVMTOP]     1
+
+Simulation complete via $finish(1) at time 1195 NS + 59
+/xcelium25.03/tools/methodology/UVM/CDNS-1.2/sv/src/base/uvm_root.svh:543     $finish;
+xcelium> exit
+xmsim: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+xmsim: *W,CGPIZE: Instance coverage for covergroup instance "fifo_cg" will not be dumped to database as per_instance option value is set to 0:./testbench.sv, 610.
+xmsim: *W,CGPIZE: Instance coverage for covergroup instance "fifo_cg" will not be dumped to database as per_instance option value is set to 0:./testbench.sv, 610.
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  fifo_uvm_tb_top(fifo_uvm_tb_top)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_00000000_1b741150.ucm
+  data               :  ./cov_work/scope/test/icc_00000000_1b741150.ucd
+TOOL:	xrun	25.03-s001: Exiting on Aug 17, 2026 at 11:58:26 EDT  (total: 00:00:09)
+Finding VCD file...
+./fifo_uvm_simulation.vcd
+[2026-08-17 15:58:26 UTC] Opening EPWave...
+Done

@@ -129,16 +129,7 @@ A `#10us` watchdog (`uvm_fatal("TIMEOUT", ...)`) in the tb top module aborts the
  
 ---
  
-## Latest Simulation Result
- 
-Run via Cadence Xcelium 25.03 (`xrun`), functional coverage enabled:
- 
-```
-xrun -Q -unbuffered -timescale 1ns/1ns -sysv -coverage functional -covoverwrite \
-  -access +rw +UVM_VERBOSITY=UVM_HIGH \
-  -uvmnocdnsextra -uvmhome $UVM_HOME $UVM_HOME/src/uvm_macros.svh \
-  design.sv testbench.sv
-```
+
  
 | Metric | Result |
 |--------|--------|
